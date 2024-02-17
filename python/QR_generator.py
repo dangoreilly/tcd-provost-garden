@@ -51,4 +51,4 @@ def make_qr_code(number, url):
 # Run main function
 if __name__ == "__main__":
     # Run the function on one URL to test
-    make_qr_code(25, "https://www.tcd.ie/disability/")
+    make_qr_code(1, "https://dangoreilly.github.io/tcd-provost-garden/?id=1")

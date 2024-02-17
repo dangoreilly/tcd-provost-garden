@@ -6,6 +6,16 @@
   background-color: #f3f3f3;
 }
 
+/* Media query for phones */
+@media (max-width: 800px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+  #map {
+    height: 600px;
+  }
+}
+
 .marker-pin {
   display: block;
   width: 30px;

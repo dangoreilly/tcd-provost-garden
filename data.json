@@ -7,5 +7,14 @@
     "id": 1,
     "carbon": 1000,
     "age": 240
+    },
+    {"title": "Sessile Oak",
+    "species": "Quercus petraea",
+    "image": "images/Sessile-Oak.png",
+    "description": "Quercus petraea, commonly known as the sessile oak, Cornish oak, Irish Oak or durmast oak, is a species of oak tree native to most of Europe and into Anatolia and Iran. The sessile oak is the national tree of Ireland, and an unofficial emblem in Wales and Cornwall.",
+    "coordinates": [919.9016070842899, 1091.542107917297],
+    "id": 2,
+    "carbon": 15,
+    "age": 1
     }
 ]

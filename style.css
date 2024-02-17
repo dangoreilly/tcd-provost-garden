@@ -5,3 +5,48 @@
   padding: 20px;
   background-color: #f3f3f3;
 }
+
+.marker-pin {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #333;
+  border-radius: 50% 50% 50% 0;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+}
+
+.marker-text {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.marker-flash {
+    animation: pulse 3s infinite;
+
+}
+
+/* make an animation to pulse the colour of the marker from #333 to #ff72e8 once a second*/
+@keyframes pulse {
+    0% {
+      background-color: #333; /* Initial color */
+      transform: scale(1) rotate(-45deg);
+    }
+    50% {
+      background-color: #ff72e8; /* Middle color */
+      transform: scale(1.2) rotate(-45deg);
+    }
+    100% {
+      background-color: #333; /* Final color */
+      transform: scale(1) rotate(-45deg);
+    }
+  }

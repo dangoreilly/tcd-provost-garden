@@ -14,6 +14,10 @@
   #map {
     height: 600px;
   }
+  #asset-image {
+    max-height: 400px;
+    object-fit: contain;
+  }
 }
 
 .marker-pin {

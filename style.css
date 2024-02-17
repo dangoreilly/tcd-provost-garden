@@ -6,6 +6,10 @@
   background-color: #f3f3f3;
 }
 
+#map {
+  height: 100%;
+}
+
 /* Media query for phones */
 @media (max-width: 800px) {
   .main-grid {

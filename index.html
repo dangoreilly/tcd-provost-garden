@@ -4,8 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tcd-provost-garden</title>
+    <!-- Import bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <!-- Import the leaflet script and css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Import the custom script and css -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
 </head>
 <body>
-    <p>hello world</p>
+    <div class="main-grid">
+        <!-- Div for the info card -->
+        <div class="card info-card">
+            <img src="images/TCD-logo.png" class="card-img-top" id="asset-image" alt="Welcome">
+            <div class="card-body">
+                <h5 class="card-title" id="asset-title">Provost Garden Information</h5>
+                <h6 class="card-subtitle mb-2 text-muted" id="asset-species">Welcome to the Provost Garden</h6>
+                <p class="card-text" id="asset-description">Tap on the icons in the interactive map to see information about the plants and habitats</p>
+            </div>
+                <ul class="list-group list-group-flush">
+                    <!-- Carbon Sequestered -->
+                    <li class="list-group-item" id="asset-carbon">--</li>
+                    <!-- Age -->
+                    <li class="list-group-item" id="asset-age">--</li>
+                </ul>
+                
+            <!-- <div class="card-body">
+                <span class="card-text" id="asset-age">--</span>
+            </div> -->
+        </div>
+        <!-- Div for the map itself -->
+        <div id="map" style="height: 100%"></div>
+
+    </div>
+
 </body>
+
+<script>
+    // Set the map size and buffer
+    const MAP_SIZE = [1200, 1800]
+    const BUFFER = 200
+    const BACKGROUND_IMAGE = "map_rough.svg"
+
+    // Fetch the data from the JSON file
+    fetch('data.json')
+        .then(response => response.json())
+        .then(jsonData => {
+            const data = Array.isArray(jsonData) ? jsonData : [];
+
+            console.log('Data:', data);
+            
+            // Initialize the map
+            initMap(MAP_SIZE, BUFFER, BACKGROUND_IMAGE, data);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            const data = [];
+
+            console.log('Data:', data);
+            
+            // Initialize the map with empty data
+            initMap(MAP_SIZE, BUFFER, BACKGROUND_IMAGE, data);
+        });
+
+    // Initialize the map
+    // initMap(MAP_SIZE, BUFFER, BACKGROUND_IMAGE, data);
+
+
+</script>
 </html>
